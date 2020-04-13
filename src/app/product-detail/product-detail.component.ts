@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { stringify } from 'querystring';
 import {Input} from '@angular/core';
+import { products } from '../products';
 
 @Component({
   selector: 'app-product-detail',
