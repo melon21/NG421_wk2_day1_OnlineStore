@@ -1,8 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { stringify } from 'querystring';
-import {Input} from '@angular/core';
-import { products } from '../products';
-import { ProductService } from '../services/product.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { IProduct } from 'src/app/models/iproduct';
 
 @Component({
   selector: 'app-product-detail',
@@ -10,21 +7,19 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-  productWasAdded(product:Product)
-  {
-    addToCart(ProductService);
-  }
-@Input() 
-price: string;
-name: string;
-description: string;
-reviews: number;
-rating: number;
-  constructor() {
 
-   }
+  @Input()
+  product: IProduct;
 
-  ngOnInit() {
+  @Output()
+  productAdded: EventEmitter<IProduct> = new EventEmitter<IProduct>();
+
+  constructor() { }
+
+  ngOnInit(): void {
   }
 
+  addToCart(): void {
+    this.productAdded.emit(this.product);
+  }
 }
