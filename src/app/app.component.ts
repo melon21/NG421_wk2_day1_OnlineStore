@@ -13,7 +13,7 @@ export class AppComponent {
   productService: any;
 
   constructor(private ProductService: ProductService ) {
-    ;
+    
    }
 
   ngOnInit() {
