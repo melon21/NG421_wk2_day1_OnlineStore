@@ -17,6 +17,6 @@ export class AppComponent {
    }
 
   ngOnInit() {
-    this.productService.getProducts(products);
+    this.products=this.ProductService.getProducts();
   }
 }
