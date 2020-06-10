@@ -1,4 +1,4 @@
-import {IProduct}  from './models/iproduct'
+import {IProduct} from 'src/app/models/iproduct';
 
 let products: IProduct[] = [ {
       "id": 1,
