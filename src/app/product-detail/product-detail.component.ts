@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IProduct } from 'src/app/models/iproduct';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 @Component({
   selector: 'app-product-detail',
@@ -10,8 +11,6 @@ export class ProductDetailComponent implements OnInit {
 
   @Input()
   product: IProduct;
-
-  @Output()
   productAdded: EventEmitter<IProduct> = new EventEmitter<IProduct>();
 
   constructor() { }
@@ -20,6 +19,10 @@ export class ProductDetailComponent implements OnInit {
   }
 
   addToCart(): void {
+
+  }
+  onProductAdded(): void{
     this.productAdded.emit(this.product);
+    console.log('onProductAdded');
   }
 }
