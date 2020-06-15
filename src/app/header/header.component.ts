@@ -9,9 +9,9 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private productService: ProductService) { }
-
   shoppingCart: Array<IProduct>;
+
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
     this.shoppingCart = this.productService.getShoppingCart();

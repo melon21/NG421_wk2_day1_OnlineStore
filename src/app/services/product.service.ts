@@ -6,19 +6,19 @@ import { products } from '../products';
 })
 export class ProductService {
 
-  shoppingCart: Array<IProduct>;
+  shoppingCart: Array<IProduct> = [];
   products: Array<IProduct>;
 
-  constructor() { 
+  constructor() {
     this.products = products;
   }
-  getProducts(): Array<IProduct>{
+  getProducts(): Array<IProduct> {
     return this.products;
   }
-  getShoppingCart(): Array<IProduct>{
+  getShoppingCart(): Array<IProduct> {
     return this.shoppingCart;
   }
-  addToCart(product: IProduct){
+  addToCart(product: IProduct) {
     this.shoppingCart.push(product);
   }
 }
