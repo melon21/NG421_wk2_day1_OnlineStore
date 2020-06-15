@@ -11,7 +11,7 @@ export class ProductDetailComponent implements OnInit {
 
   @Input()
   product: IProduct;
-  productAdded: EventEmitter<IProduct> = new EventEmitter<IProduct>();
+  @Output() productAdded: EventEmitter<IProduct> = new EventEmitter<IProduct>();
 
   constructor() { }
 
